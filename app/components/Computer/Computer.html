@@ -1,0 +1,48 @@
+<div ng-controller="ComputerCtrl" ng-init="getEntity()">
+    <div class="prevLink">
+    </div>
+
+    <div ng-hide="computerDataLoaded || errorDataLoaded!=''" class="preloader">
+    </div>
+
+    <div ng-bind-html="errorDataLoaded"></div>
+
+    <div ng-show="computerDataLoaded">
+        <div class="panel panel-default" ng-repeat="comp in computerData">
+            <div class="panel-heading">
+                <h3> Komputer: {{comp.name}}
+                </h3>
+            </div>
+            
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-4 textToRight">Kod (identyfikator): </div>
+                            <div class="col-xs-6 col-sm-8">{{comp.barcode}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-4 textToRight">IP: </div>
+                            <div class="col-xs-6 col-sm-8">{{comp.ip || '-'}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-4 textToRight">Adres mac: </div>
+                            <div class="col-xs-6 col-sm-8">{{comp.mac || '-'}}</div>
+                        </div>
+                        <div class="row">
+                            <div class="margin-top">
+                                <div class="col-xs-6 col-sm-4 textToRight">Laboratorium: </div>
+                                <div class="col-xs-6 col-sm-8">{{comp.laboratory.building + comp.laboratory.roomNo}}</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-4 textToRight">Opiekun: </div>
+                            <div class="col-xs-6 col-sm-8">{{comp.laboratory.owner.firstname + ' ' + comp.laboratory.owner.surname}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
