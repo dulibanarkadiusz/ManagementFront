@@ -2,7 +2,7 @@
   "name": "eLaborant",
   "version": "1.0.0",
   "dependencies": {
-    "angular": "1.5.8",
+    "angular": "1.8.0",
     "angular-bootstrap-multiselect": "^1.1.11",
     "angular-bootstrap-npm-old": "^0.12.1",
     "angular-moment": "^1.2.0",
